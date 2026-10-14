@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteNest | My Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Note<span>Nest.</span></a>
+        <p class="subtitle">Your thoughts, your space.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL SPACE</p>
+                <h1>My Notes</h1>
+                <p>Capture your thoughts and keep them organized.</p>
+            </div>
+
+            <button id="newNoteBtn" class="primary-btn">
+                + New Note
+            </button>
+        </section>
+
+        <section class="toolbar">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search your notes..."
+                aria-label="Search notes"
+            >
+            <p id="noteCount">0 notes</p>
+        </section>
+
+        <section id="editor" class="editor hidden">
+            <h2 id="editorHeading">Create a Note</h2>
+
+            <form id="noteForm">
+                <label for="noteTitle">Title</label>
+                <input
+                    type="text"
+                    id="noteTitle"
+                    maxlength="100"
+                    placeholder="Give your note a title..."
+                    required
+                >
+
+                <label for="noteContent">Your note</label>
+                <textarea
+                    id="noteContent"
+                    rows="6"
+                    maxlength="10000"
+                    placeholder="Write your thoughts here..."
+                    required
+                ></textarea>
+
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn" class="secondary-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" id="saveBtn" class="primary-btn">
+                        Save Note
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="notes-section">
+            <h2>All Notes</h2>
+
+            <div id="notesGrid" class="notes-grid"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✎</div>
+                <h3 id="emptyTitle">No notes yet</h3>
+                <p id="emptyMessage">
+                    Create your first note to get started.
+                </p>
+                <button id="emptyNewBtn" class="primary-btn">
+                    Create Your First Note
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NoteNest &copy; 2026 | Made for your ideas.</p>
+    </footer>
+
+    <script src="storage.js"></script>
+    <script src="notes.js"></script>
+    <script src="note-actions.js"></script>
+</body>
+</html>
