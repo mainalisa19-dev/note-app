@@ -1,3 +1,4 @@
+
 document.getElementById("newNoteBtn").addEventListener("click", () => {
     app.openEditor();
 });
@@ -19,7 +20,7 @@ app.deleteNote = function (id) {
 
     if (!note) return;
 
-    if (!confirm(Are you sure you want to delete "${note.title}"?)) {
+    if (!confirm(`Are you sure you want to delete "${note.title}"?`)) {
         return;
     }
 
